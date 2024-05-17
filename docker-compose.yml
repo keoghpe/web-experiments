@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/:ro
+      - ./nginx/certs:/etc/nginx/ssl
+  # sitely_server:
+  #   build:
+  #     context: ./sitely
+  #   command: bundle exec rails s -b 0.0.0.0
+  #   environment:
+  #     - RAILS_ENV=development
+  #     - RAILS_MASTER_KEY=5cdc7ef44378a7ace7abc6bbf2e9a5b9
+  #   ports:
+  #     - "3000:3000"
+  # embeddly_server:
+  #   build:
+  #     context: ./embeddly
+  #   command: bundle exec rails s -b 0.0.0.0
+  #   environment:
+  #     - RAILS_ENV=development
+  #     - RAILS_MASTER_KEY=a053c2f5f7de07aee85ea7564480c687
+  #   ports:
+  #     - "3001:3000"
