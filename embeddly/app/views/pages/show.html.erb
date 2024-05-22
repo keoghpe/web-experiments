@@ -1,0 +1,12 @@
+<h1>Embeddly</h1>
+
+<% if cookies[:user_name] %>
+  Signed in!
+<% else %>
+<form action="/sign_in" method="POST">
+  <input type="text" name="user_name">
+  <button>Submit</button>
+</form>
+<% end %>
+
+<script src="./script.js"></script>

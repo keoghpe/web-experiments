@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "pages#show"
+
+  get "script", to: "pages#script"
+  post "sign_in", to: "pages#sign_in"
 end
